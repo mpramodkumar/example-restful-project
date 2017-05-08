@@ -48,7 +48,7 @@ public class TeapotCrudServiceImpl implements TeapotCrudService {
     public Collection<Teapot> findAll(String[] ids)
             throws TeapotsNotExistException {
         Collection<Teapot> found = new HashSet<>();     // found teapots
-        Collection<String> notFound = new HashSet<>();  // not found teapots
+       /* Collection<String> notFound = new HashSet<>();  // not found teapots
 
         Arrays.asList(ids).forEach(id -> {
             if (teapotRepository.exists(id)) {
@@ -60,8 +60,10 @@ public class TeapotCrudServiceImpl implements TeapotCrudService {
 
         if (!notFound.isEmpty()) {
             throw new TeapotsNotExistException(notFound);
-        }
-
+        }*/
+        Teapot teapot = new Teapot();
+        teapot.setBrand("test");
+        found.add(teapot);
         return found;
     }
 
